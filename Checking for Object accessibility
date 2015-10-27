@@ -1,0 +1,12 @@
+{!$ObjectType.objectname.accessible}
+
+{!$ObjectType.Lead.accessible}
+
+<apex:page standardController="Lead">
+  <apex:pageBlock rendered="{!$ObjectType.Lead.accessible}">
+    <p>This text will display if you can see the Lead Object.</p>
+  </apex:pageBlock>
+  <apex:pageBlock rendered="NOT({!$ObjectType.Lead.accessible})">
+    <p>Sorry, but you cannot see the datat becasue do do not have the access to the Lead Object.</p>
+  </apex:pageBlock>
+</apex:page>
