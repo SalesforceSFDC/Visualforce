@@ -1,0 +1,29 @@
+<apex:page docType="html-5.0" standardController="Opportunity" title="Close Opportunity">
+
+    <script src='/canvas/sdk/js/publisher.js'></script>
+
+    <apex:remoteObjects>
+        <apex:remoteObjectModel name="Opportunity" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+    <div class="mypage">
+        <button onclick="closeOpportunity('Closed Won')">Won</button>
+        <button onclick="closeOpportunity('Closed Lost')">Lost</button>
+    </div>
+    
+    <script>
+        var opportunityId = "{!Opportunity.Id}";
+
+        function closeOpportunity(stageName) {
+            var opportunity = new SObjectModel.Opportunity();
+            opportunity.update([opportunityId], {StageName: stageName}, function(error, records) {
+                if (error) {
+                    alert(error.message);
+                } else {
+                    Sfdc.canvas.publisher.publish({ name: "publisher.close", payload: {refresh:"true"}});
+                }
+            });
+    }
+    </script>
+    
+</apex:page>
