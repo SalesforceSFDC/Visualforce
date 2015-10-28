@@ -1,3 +1,6 @@
+//--the page loads data using the standard controller, ------//
+//--but updates it with Remote Objects, combining two different data access methods on the same page.-------//
+
 <apex:page docType="html-5.0" standardController="Opportunity" title="Close Opportunity">
 
     <script src='/canvas/sdk/js/publisher.js'></script>
@@ -25,9 +28,4 @@
             });
     }
     </script>
-    
-//--the page loads data using the standard controller, 
-//--but updates it with Remote Objects, combining two different data access methods on the same page.
-    
-    
 </apex:page>
