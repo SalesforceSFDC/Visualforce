@@ -26,5 +26,8 @@
     }
     </script>
     
+//--the page loads data using the standard controller, 
+//--but updates it with Remote Objects, combining two different data access methods on the same page.
+    
     
 </apex:page>
