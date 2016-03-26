@@ -1,0 +1,34 @@
+<!-- Pagintation -->
+        <table style="width: 100%"><tr>
+            
+            <td>
+                Page: <apex:outputText value=" {!PageNumber} of {! CEILING(ResultSize / PageSize)}"/>
+            </td>
+            
+            <td align="center">
+                <!-- Previous page -->
+                <!-- active -->
+                <apex:commandLink action="{! Previous }" value="<< Previous" rendered="{! HasPrevious }" />
+                <!-- inactive (no earlier pages) -->
+                <apex:outputText style="color: #ccc;" value="<< Previous" rendered="{! NOT(HasPrevious) }" />
+                
+                &nbsp;&nbsp;
+                
+                <!-- Next page -->
+                <!-- active -->
+                <apex:commandLink action="{! Next }" value="Next >>" rendered="{! HasNext }" />
+                <!-- inactive (no more pages) -->
+                <apex:outputText style="color: #ccc;" value="Next >>" rendered="{! NOT(HasNext) }" />
+            </td>
+            
+            <td align="center">
+                <!-- Records per page -->
+                Records per page:
+                <apex:selectList value="{! PageSize }" size="1">
+                    <apex:selectOption itemValue="5" itemLabel="5" />
+                    <apex:selectOption itemValue="20" itemLabel="20" />
+                    <apex:actionSupport event="onchange" reRender="contacts_list" />
+                </apex:selectList>
+            </td>
+
+            </tr></table>
