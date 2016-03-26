@@ -1,12 +1,22 @@
 <apex:page standardController="Contact" recordSetVar="contacts">
-    <apex:pageBlock title="Contacts List">
+    <apex:form>
+    
+    <apex:pageBlock title="Contacts List" id="contacts_list">
+        
+        Filter:
+        <apex:selectList value="{! filterId }" size="1">
+            <apex:selectOptions value="{! listViewOptions }"/>
+            <apex:actionSupport event="onchange" reRender="contacts_list"/>
+        </apex:selectList>
+        
         <!-- Contacts List -->
-        <apex:pageBlockTable value="{!contacts}" var="ct">
-            <apex:column value="{!ct.FirstName}"/>
-            <apex:column value="{!ct.LastName}"/>
-            <apex:column value="{!ct.Email}"/>
-            <apex:column value="{!ct.Account.Name}"/>
+        <apex:pageBlockTable value="{! contacts }" var="ct">
+            <apex:column value="{! ct.FirstName }"/>
+            <apex:column value="{! ct.LastName }"/>
+            <apex:column value="{! ct.Email }"/>
+            <apex:column value="{! ct.Account.Name }"/>
         </apex:pageBlockTable>
     </apex:pageBlock>
     
+    </apex:form>
 </apex:page>
