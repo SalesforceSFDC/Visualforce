@@ -1,0 +1,15 @@
+<!-- Page: -->
+<<apex:page controller="repeatCon" id="thePage">
+  <apex:repeat value="{!strings}" var="string" id="theRepeat">
+    <apex:outputText value="{!string}" id="theValue"/><br/>
+  </apex:repeat>
+</apex:page>
+
+/*** Controller: ***/
+
+public class repeatCon {
+  
+    public String[] getStrings() {
+        return new String[]{'ONE', 'TWO', 'THREE'};
+    }
+}
