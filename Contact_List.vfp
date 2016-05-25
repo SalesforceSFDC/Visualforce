@@ -2,7 +2,7 @@
     <apex:pageBlock title="Contacts List">
 
         <!-- Contacts List -->
-        <apex:pageBlockTable value="{!contacts}" var="ct"/>
+        <apex:pageBlockTable value="{!contacts}" var="ct">
             <apex:column value="{!ct.FirstName}"/>
             <apex:column value="{!ct.LastName}"/>
             <apex:column value="{!ct.Email}"/>
