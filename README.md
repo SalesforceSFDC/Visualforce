@@ -6,4 +6,4 @@ Standard List Controller - To create Visualforce pages that can display or act o
 
 ### Display a List of Records
 
-Use the standard list controller and an iteration component, such as <apex:pageBlockTable>, to display a list of records.
+Use the standard list controller and an iteration component, such as `<apex:pageBlockTable>`, to display a list of records.
