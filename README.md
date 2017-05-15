@@ -14,19 +14,7 @@ Use the standard list controller and an iteration component, such as `<apex:page
 
 Because you’re dealing with a collection, instead of an individual record, you need to use an iteration component to display them. An iteration component works with a collection of similar items, instead of on a single value. An iteration component loops through its collection, and for each record, generates some output based on a template you provide as part of the component markup.
 
-<apex:page standardController="Contact" recordSetVar="contacts">
-    <apex:pageBlock title="Contacts List">
-        
-        <!-- Contacts List -->
-        <apex:pageBlockTable value="{! contacts }" var="ct">
-            <apex:column value="{! ct.FirstName }"/>
-            <apex:column value="{! ct.LastName }"/>
-            <apex:column value="{! ct.Email }"/>
-            <apex:column value="{! ct.Account.Name }"/>
-        </apex:pageBlockTable>
-        
-    </apex:pageBlock>
-</apex:page>
+ContactList.vfp
 ``` Apex
 <apex:page standardController="Contact" recordSetVar="contacts">
     <apex:pageBlock title="Contacts List">
