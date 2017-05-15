@@ -33,4 +33,12 @@ Because you’re dealing with a collection, instead of an individual record, you
     
       <!-- Contacts List -->
       <apex:pageBlockTable value="{! contacts}" var="ct">
+            <apex:column value="{! ct.FirstName }"/>
+            <apex:column value="{! ct.LastName }"/>
+            <apex:column value="{! ct.Email }"/>
+            <apex:column value="{! ct.Account.Name }"/>
+      </apex:pageBlockTable>
+      
+    </apex:pageBlock>
+</apex:page>
 ```      
