@@ -27,7 +27,7 @@ Because you’re dealing with a collection, instead of an individual record, you
         
     </apex:pageBlock>
 </apex:page>
-``` Visualforce
+``` Apex
 <apex:page standardController="Contact" recordSetVar="contacts">
     <apex:pageBlock title="Contacts List">
     
