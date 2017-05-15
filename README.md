@@ -31,7 +31,9 @@ ContactList.vfp
 </apex:page>
 ```      
 
- First you set the standardController attribute on the <apex:page> component, then you set the recordSetVar attribute on the same component. The standardController attribute sets the object to work with, just like with the standard controller. The recordSetVar sets the name of the variable to be created with the collection of records, here, {! contacts }. By convention, this variable is usually named the plural of the object name.
+### Using a Standard List Controller
+
+First you set the standardController attribute on the <apex:page> component, then you set the recordSetVar attribute on the same component. The standardController attribute sets the object to work with, just like with the standard controller. The recordSetVar sets the name of the variable to be created with the collection of records, here, {! contacts }. By convention, this variable is usually named the plural of the object name.
 
 <apex:pageBlockTable> is an iteration component that generates a table of data, complete with platform styling. Here’s what’s going on in the table markup.
 The value attribute of <apex:pageBlockTable> is set to the variable loaded by the standard list controller, {! contacts }. This is the list of records that <apex:pageBlockTable> will work with.
