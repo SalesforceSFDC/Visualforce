@@ -36,7 +36,7 @@ ContactList.vfp
 First you set the standardController attribute on the <apex:page> component, then you set the recordSetVar attribute on the same component. The standardController attribute sets the object to work with, just like with the standard controller. The recordSetVar sets the name of the variable to be created with the collection of records, here, {! contacts }. By convention, this variable is usually named the plural of the object name.
 
 <apex:pageBlockTable> is an iteration component that generates a table of data, complete with platform styling. Here’s what’s going on in the table markup.
-The value attribute of <apex:pageBlockTable> is set to the variable loaded by the standard list controller, {! contacts }. This is the list of records that <apex:pageBlockTable> will work with.
-For each record in that list, one record at a time, <apex:pageBlockTable> assigns that record to the variable named in the <apex:pageBlockTable>’s var attribute. In this case, that variable is named ct.
-For each record, <apex:pageBlockTable> constructs a new row in the table, using the row defined by the set of <apex:column> components within the body of <apex:pageBlockTable>. The <apex:column> components, in turn, use the ct variable that represents the current record to pull out the field values for that record.
-Outside of the loop, <apex:pageBlockTable> uses the fields in the <apex:column> components to create column headers, by looking up the label for each field.
+ * The value attribute of <apex:pageBlockTable> is set to the variable loaded by the standard list controller, {! contacts }. This is the list of records that <apex:pageBlockTable> will work with.
+ * For each record in that list, one record at a time, <apex:pageBlockTable> assigns that record to the variable named in the <apex:pageBlockTable>’s var attribute. In this case, that variable is named ct.
+ * For each record, <apex:pageBlockTable> constructs a new row in the table, using the row defined by the set of <apex:column> components within the body of <apex:pageBlockTable>. The <apex:column> components, in turn, use the ct variable that represents the current record to pull out the field values for that record.
+ * Outside of the loop, <apex:pageBlockTable> uses the fields in the <apex:column> components to create column headers, by looking up the label for each field.
